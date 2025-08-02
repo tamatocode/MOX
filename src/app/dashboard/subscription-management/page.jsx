@@ -43,7 +43,7 @@ import {
   createSubscriptionPlanMassaWallet,
 } from "../../../massacontract";
 
-import { createSubscription } from "../../../stellarcontract/index";
+// import { createSubscription } from "../../../stellarcontract/index";
 
 function Page() {
   // const { themeClasses } = useTheme();
