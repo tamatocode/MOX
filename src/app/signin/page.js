@@ -46,7 +46,7 @@ export default function SignIn() {
         <div className="relative z-10 max-w-xl text-center md:text-left px-4">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-violet-600 to-purple-700">
-              Monax
+              MAUX
             </span>
             <br />
             <span className="text-gray-700">
@@ -54,7 +54,7 @@ export default function SignIn() {
             </span>
           </h1>
           <p className="mt-4 text-lg text-gray-600">
-            Secure, fast, and transparent payments on the Polygon network.
+            Secure, fast, and transparent payments on the Monad network.
           </p>
         </div>
       </div>
@@ -67,7 +67,7 @@ export default function SignIn() {
               </div>
             </div>
             <CardTitle className="text-2xl text-gray-900">
-              Monax Sign In
+              MAUX Sign In
             </CardTitle>
             <CardDescription className="text-gray-600">
               Access your merchant Dashboard
@@ -76,28 +76,11 @@ export default function SignIn() {
           <CardContent className="p-6 space-y-4">
             {error === "OAuthAccountNotLinked" && (
               <p className="text-red-600 text-sm text-center bg-red-50 p-3 rounded-lg border border-red-200">
-                This Google account is not linked to a Monax account. Please
+                This Google account is not linked to a MAUX account. Please
                 use a different account or contact support.
               </p>
             )}
-            {/* <Button
-              onClick={() => {
-                handleRole("user");
-                signIn("google", {
-                  callbackUrl: "/userdashboard",
-                });
-              }}
-              className="w-full bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 flex items-center justify-center gap-2 transition-all duration-200 hover:border-purple-300"
-              variant="outline"
-            >
-              <Image
-                src="https://www.svgrepo.com/show/303108/google-icon-logo.svg"
-                alt="Google"
-                width={20}
-                height={20}
-              />
-              Sign in with Google
-            </Button> */}
+           
             <Button
               onClick={() => {
                 signIn("google", {

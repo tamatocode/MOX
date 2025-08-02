@@ -6,8 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "../../components/ui/card";
-import DashboardCharts from "../../components/DashboardCharts";
-import { useTheme } from "../../context/themeContext";
 import { getMetrics } from "../../smartcontractsHelpers/index";
 import { useEffect, useState } from "react";
 
@@ -103,9 +101,7 @@ export default function Dashboard() {
                 >
                   {(metrics?.totalTransactions ?? 0).toLocaleString()}
                 </div>
-                {/* <p className="text-xs mt-1 text-gray-400">
-                  +5.6% from last month
-                </p> */}
+                
               </CardContent>
             </Card>
 
@@ -140,9 +136,7 @@ export default function Dashboard() {
                 >
                   {(metrics?.totalSubscriptions ?? 0).toLocaleString()}
                 </div>
-                {/* <p className="text-xs mt-1 text-gray-400">
-                  +3.1% from last month
-                </p> */}
+                
               </CardContent>
             </Card>
 
@@ -176,19 +170,12 @@ export default function Dashboard() {
                 >
                   {formatCurrency(metrics?.totalRevenue ?? 0)}
                 </div>
-                {/* <p className="text-xs mt-1 text-gray-400">
-                  +4.2% from last month
-                </p> */}
+               
               </CardContent>
             </Card>
           </div>
 
-          {/* Charts - Replace [] with live data later */}
-          {/* <DashboardCharts
-            revenueData={[]}
-            dailyData={[]}
-            isDarkMode={isDarkMode}
-          /> */}
+         
         </div>
       </div>
     </div>

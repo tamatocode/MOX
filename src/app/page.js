@@ -129,7 +129,7 @@ export default function EnhancedMonaxLanding() {
               <div className="absolute -top-1 -right-1 size-3 bg-green-400 rounded-full animate-pulse"></div>
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
-              Monax
+              Maux
             </span>
           </div>
           
@@ -228,7 +228,7 @@ export default function EnhancedMonaxLanding() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5"></div>
                 <img
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                  alt="Monax Dashboard"
+                  alt="Maux Dashboard"
                   className="w-full h-auto relative z-10"
                 />
                 <div className="absolute inset-0 ring-1 ring-inset ring-slate-900/10 dark:ring-white/10 rounded-2xl"></div>

@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "MOX",
+  title: "MAUX",
   description: "A Decentralized Subscription Payment Gateway",
   
 };

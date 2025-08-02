@@ -75,7 +75,7 @@ export default function Sidebar() {
         {/* Header */}
         <div className="p-8 border-b border-gray-200/10">
           <h1 className={`text-3xl font-semibold  tracking-tight`}>
-            Monax
+            MAUX
           </h1>
         </div>
 
