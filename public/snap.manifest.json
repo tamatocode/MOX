@@ -1,0 +1,8 @@
+{
+  "initialPermissions": {
+    "endowment:network-access": {},
+    "endowment:rpc": {
+      "dapps": ["http://localhost:3000"]
+    }
+  }
+}

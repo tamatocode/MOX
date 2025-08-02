@@ -1,0 +1,113 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// this is for merchants
+model User {
+  id            Int            @id @default(autoincrement())
+  name          String?
+  email         String         @unique
+  image         String?
+  emailVerified DateTime?
+  wallet        String?
+  apiKeys       ApiKey[]
+  point         Int?           @default(0)
+  role          String?         @default("merchant")
+  subscription  Subscription[]
+  transactions  Transaction[]
+  referralCode  String?        @unique
+  referredBy    Int?
+  accounts      Account[]
+  sessions      Session[]
+  createdAt     DateTime       @default(now())
+}
+
+model Wallet {
+  id            String @id @default(cuid())
+  email         String
+  walletAddress String @unique
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            Int
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       Int
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Transaction {
+  id         Int      @id @default(autoincrement())
+  merchantId Int
+  merchant   User     @relation(fields: [merchantId], references: [id])
+  amount     Float
+  status     String
+  linkId     Int?
+  createdAt  DateTime @default(now())
+}
+
+model ApiKey {
+  id           Int      @id @default(autoincrement())
+  merchantId   Int
+  merchant     User     @relation(fields: [merchantId], references: [id])
+  key          String   @unique
+  clientId     String   @unique
+  clientSecret String   @unique
+  createdAt    DateTime @default(now())
+}
+
+model Subscription {
+  id          String       @id @default(cuid())
+  name        String
+  description String
+  amount      Float
+  billingTime Int
+  recurring   Boolean
+  UserId      Int
+  user        User         @relation(fields: [UserId], references: [id])
+  subscriber  Subscriber[]
+}
+
+model Subscriber {
+  id             String       @id @default(cuid())
+  name           String
+  email          String
+  phoneNumber    String
+  address        String?
+  subscriptionId String
+  subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+  createdAt      DateTime     @default(now())
+}
